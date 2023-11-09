@@ -1,11 +1,9 @@
 {
-  "name": "temporal-hello-world",
-  "version": "0.1.0",
-  "private": true,
+  "type": "module",
   "scripts": {
     "build": "tsc --build",
-    "worker": "ts-node src/worker.ts",
-    "client": "ts-node src/client.ts"
+    "worker": "node --loader ts-node/esm src/worker.ts",
+    "client": "node --loader ts-node/esm src/client.ts"
   },
   "dependencies": {
     "@temporalio/activity": "^1.8.4",

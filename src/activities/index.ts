@@ -1,1 +1,1 @@
-export { greet } from "./greet";
+export { greet } from "./greet.js";

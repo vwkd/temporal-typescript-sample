@@ -1,10 +1,10 @@
 import { proxyActivities } from "@temporalio/workflow";
-import type * as activities from "../activities/index";
+import type * as activities from "../activities/index.js";
 
 const { greet } = proxyActivities<typeof activities>({
   startToCloseTimeout: "1 minute",
 });
 
-export async function example(name: string): Promise<string> {
+export async function hello(name: string): Promise<string> {
   return await greet(name);
 }
