@@ -1,22 +1,22 @@
-import { Connection, Client } from '@temporalio/client';
-import { example } from './workflows/index';
+import { Client, Connection } from "@temporalio/client";
+import { example } from "./workflows/index";
 
 async function run() {
-  const connection = await Connection.connect({ address: 'localhost:7233' });
+  const connection = await Connection.connect({ address: "localhost:7233" });
 
   const client = new Client({
     connection,
   });
 
   const handle = await client.workflow.start(example, {
-    taskQueue: 'hello-world',
-    args: ['Temporal'],
-    workflowId: 'workflow-' + Math.random().toString(36).slice(2),
+    taskQueue: "hello-world",
+    args: ["Temporal"],
+    workflowId: `workflow-${Math.random().toString(36).slice(2)}`,
   });
 
   console.log(`Started workflow ${handle.workflowId}`);
 
-  const result = await handle.result()
+  const result = await handle.result();
 
   console.log(result);
 }
