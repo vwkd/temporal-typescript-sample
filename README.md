@@ -1,5 +1,7 @@
 # README
 
+Modern and minimal Temporal sample in TypeScript on Node
+
 
 
 ## Usage
