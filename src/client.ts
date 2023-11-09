@@ -11,7 +11,7 @@ async function run() {
   const handle = await client.workflow.start(example, {
     taskQueue: 'hello-world',
     args: ['Temporal'],
-    workflowId: 'workflow-' + Math.floor(Math.random() * 1000000),
+    workflowId: 'workflow-' + Math.random().toString(36).slice(2),
   });
 
   console.log(`Started workflow ${handle.workflowId}`);

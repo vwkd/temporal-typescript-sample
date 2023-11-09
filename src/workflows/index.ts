@@ -1,5 +1,5 @@
 import * as workflow from '@temporalio/workflow';
-import type * as activities from './activities';
+import type * as activities from '../activities';
 
 const { greet } = workflow.proxyActivities<typeof activities>({
   startToCloseTimeout: '1 minute',
