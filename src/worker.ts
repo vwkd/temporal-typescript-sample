@@ -1,5 +1,5 @@
 import { NativeConnection, Worker } from '@temporalio/worker';
-import * as activities from './activities';
+import * as activities from './activities/index';
 
 async function run() {
   const connection = await NativeConnection.connect({

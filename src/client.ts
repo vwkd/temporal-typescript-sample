@@ -1,5 +1,5 @@
 import { Connection, Client } from '@temporalio/client';
-import { example } from './workflows';
+import { example } from './workflows/index';
 
 async function run() {
   const connection = await Connection.connect({ address: 'localhost:7233' });
